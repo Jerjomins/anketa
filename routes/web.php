@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'QuizController@index')->name('quiz');
+Route::post('question', 'QuizController@start')->name('quiz.start');
+Route::post('answers', 'AnswersController@get')->name('answers.get');

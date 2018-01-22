@@ -1,9 +1,14 @@
 #Test for dragiem grup
 
 Hello, first you need
-1. Copy **.env-example** and name to **.env**
-2. In project folder console 
-3. **php artisan key:generate**
-4. **composer install**
-5. **npm install**
-6. **npm run production**
+
+<ol>
+<li>Copy **.env-example** and name to **.env**</li>
+<li><i>_In project folder console:</i></li> 
+<li>**php artisan key:generate**</li>
+<li>**php artisan migrate**</li>
+<li>**php artisan db:seed**</li>
+<li>**composer install**</li>
+<li>**npm install**</li>
+<li>**npm run production**</li>
+</ol>
