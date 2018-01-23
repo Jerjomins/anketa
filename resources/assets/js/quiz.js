@@ -7,25 +7,27 @@ new Vue({
         selected: false,
         answers: {},
         getAnswersUrl: getAnswers,
-        question_id: 0,
+        qusetionId: 0,
     },
 
     beforeMount () {
-        this.nextQuestion();
+        this.setQuestion(this.qusetionId);
+        this.getAnswers();
     },
 
     methods: {
-        nextQuestion () {
-            this.getQuestion();
-            this.getAnswers();
+        setQuestion (questionId) {
+            this.currentQuestion = this.questions[questionId];
         },
 
         /**
-         * Get current question
+         * Init question, and set for next question onclick
+         * @returns {*}
          */
-        getQuestion () {
-            this.currentQuestion = this.questions[this.question_id++];
+        nextQuestion () {
+            this.setQuestion(this.qusetionId++);
             this.selected = false;
+            return this.getAnswers();
         },
 
         /**
