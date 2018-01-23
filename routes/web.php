@@ -12,5 +12,12 @@
 */
 
 Route::get('/', 'QuizController@index')->name('quiz');
-Route::post('question', 'QuizController@start')->name('quiz.start');
+Route::post('quiz-start', 'QuizController@start')->name('quiz.start');
+Route::get('quiz-finish', 'QuizController@finish')->name('quiz.finish');
+Route::post('quiz-finish', 'QuizController@store')->name('quiz.store');
 Route::post('answers', 'AnswersController@get')->name('answers.get');
+Route::post('save-answer', 'AnswersController@save')->name('answer.save');
+Route::get('results', 'ResultsController@index')->name('results');
+Route::any('{all}', function () {
+    return abort(404);
+})->where('all', '.*');

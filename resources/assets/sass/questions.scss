@@ -1,12 +1,30 @@
 html, body {
-  background-color: #fff;
   color: #636b6f;
   font-weight: 100;
   margin: 0;
+  font-family: sans-serif;
 }
 
-.content {
-  padding: 15px;
+.next-question {
+  margin: 15px 0;
+}
+
+.loader-mask {
+  position: fixed;
+  z-index: 9998;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, .8);
+  transition: opacity .3s ease;
+
+  .loader-wrapper {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translateX(-50%);
+  }
 }
 
 .top-right {
@@ -17,7 +35,7 @@ html, body {
 
 .title {
   text-align: center;
-  font-size: 80px;
+  font-size: 60px;
 }
 
 .custom-radio {

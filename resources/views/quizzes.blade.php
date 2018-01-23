@@ -15,11 +15,11 @@
                            placeholder="Ievadi savu vārdu">
                 </div>
                 <div class="form-group">
-                    <label for="selectQuestion">Izvēlies testu</label>
-                    <select class="form-control" name="question" id="selectQuestion">
+                    <label for="selectQuiz">Izvēlies testu</label>
+                    <select class="form-control" name="quiz" id="selectQuiz">
                         <option value="">Izvēlies testu</option>
-                        @foreach($quizzes as $question)
-                            <option value="{{ $question->id }}">{{ $question->name }}</option>
+                        @foreach($quizzes as $quiz)
+                            <option value="{{ $quiz->id }}">{{ $quiz->name }}</option>
                         @endforeach
                     </select>
                 </div>

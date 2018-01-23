@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StartQuestion extends FormRequest
+class GetAnswers extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,9 @@ class StartQuestion extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|max:50',
-            'question' => 'required',
+            'question_id' => 'required|exists:questions,id',
+            'quiz_id'     => 'required|exists:quizzes,id',
+            'answer_id'   => 'integer|exists:answers,id',
         ];
     }
 
@@ -35,8 +36,7 @@ class StartQuestion extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'Lūdzu ievadi savu vārdu',
-            'question.required'  => 'Lūdzu izvēlies testu',
+            'answer_id.integer' => 'Lūdzu izvēlieties atbildi!',
         ];
     }
 }
