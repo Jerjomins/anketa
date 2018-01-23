@@ -7,20 +7,25 @@ new Vue({
         selected: false,
         answers: {},
         getAnswersUrl: getAnswers,
-        question_id: 0,
+        qusetionId: 0,
     },
 
-    beforeMount: function () {
-        this.nextQuestion();
+    beforeMount () {
+        this.setQuestion(this.qusetionId);
+        this.getAnswers();
     },
 
     methods: {
+        setQuestion (questionId) {
+            this.currentQuestion = this.questions[questionId];
+        },
+
         /**
          * Init question, and set for next question onclick
          * @returns {*}
          */
-        nextQuestion: function () {
-            this.currentQuestion = this.questions[this.question_id++];
+        nextQuestion () {
+            this.setQuestion(this.qusetionId++);
             this.selected = false;
             return this.getAnswers();
         },
@@ -28,7 +33,7 @@ new Vue({
         /**
          * Get answers for current question
          */
-        getAnswers: function () {
+        getAnswers () {
             axios.post(this.getAnswersUrl, {
                 question_id: this.currentQuestion.id,
                 quiz_id: this.currentQuestion.quiz_id

@@ -1,14 +1,21 @@
-#Test for dragiem grup
+#Simple quiz 
 
-Hello, first you need
+Requirements
+1. PHP 7.1.3 or upper
 
-<ol>
-<li>Copy **.env-example** and name to **.env**</li>
-<li><i>_In project folder console:</i></li> 
-<li>**php artisan key:generate**</li>
-<li>**php artisan migrate**</li>
-<li>**php artisan db:seed**</li>
-<li>**composer install**</li>
-<li>**npm install**</li>
-<li>**npm run production**</li>
-</ol>
+PHP Extensions
+1. **extension=openssl**
+1. **extension=mbstring**
+1. **extension=pdo_mysql**
+
+ENV file
+1. Copy **.env-example** and name to **.env**
+1. Create database, and write into **.env**
+
+CLI (project folder console)
+1. **composer install**
+1. _In project folder console:_ 
+1. **php artisan key:generate**
+1. **php artisan migrate**
+1. **npm install**
+1. **npm run production**
