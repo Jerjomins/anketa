@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StartQuiz;
-use App\Http\Requests\storeQuiz;
+use App\Http\Requests\StoreQuiz;
 use App\Question;
 use App\Quiz;
 use App\User;
@@ -115,7 +115,7 @@ class QuizController extends Controller
      * @param storeQuiz $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function store(storeQuiz $request)
+    public function store(StoreQuiz $request)
     {
         $userId = $request->input('user_id');
 
