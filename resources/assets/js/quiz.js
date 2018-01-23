@@ -10,25 +10,28 @@ new Vue({
         question_id: 0,
     },
 
-    beforeMount: function () {
+    beforeMount () {
         this.nextQuestion();
     },
 
     methods: {
+        nextQuestion () {
+            this.getQuestion();
+            this.getAnswers();
+        },
+
         /**
-         * Init question, and set for next question onclick
-         * @returns {*}
+         * Get current question
          */
-        nextQuestion: function () {
+        getQuestion () {
             this.currentQuestion = this.questions[this.question_id++];
             this.selected = false;
-            return this.getAnswers();
         },
 
         /**
          * Get answers for current question
          */
-        getAnswers: function () {
+        getAnswers () {
             axios.post(this.getAnswersUrl, {
                 question_id: this.currentQuestion.id,
                 quiz_id: this.currentQuestion.quiz_id

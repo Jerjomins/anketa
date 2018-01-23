@@ -24,7 +24,17 @@ class StoreAnswer extends FormRequest
     public function rules()
     {
         return [
-            //
+
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+
         ];
     }
 }

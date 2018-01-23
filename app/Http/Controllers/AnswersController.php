@@ -39,4 +39,9 @@ class AnswersController extends Controller
 
         return false;
     }
+
+    public function post()
+    {
+
+    }
 }
