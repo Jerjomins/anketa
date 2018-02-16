@@ -18,6 +18,11 @@ Route::post('quiz-finish', 'QuizController@store')->name('quiz.store');
 Route::post('answers', 'AnswersController@get')->name('answers.get');
 Route::post('save-answer', 'AnswersController@save')->name('answer.save');
 Route::get('results', 'ResultsController@index')->name('results');
-Route::any('{all}', function () {
-    return abort(404);
-})->where('all', '.*');
+//Route::any('{all}', function () {
+//    return abort(404);
+//})->where('all', '.*');
+
+/**
+ * Admin part
+ */
+Route::get('admin/quizzes', 'Admin\QuizController@index')->name('admin.quizzes');

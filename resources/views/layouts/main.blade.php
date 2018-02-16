@@ -23,7 +23,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand">Tests</a>
+            <a class="navbar-brand">Quizzes</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -31,6 +31,10 @@
             <ul class="nav navbar-nav">
                 <li><a href="{{ route('quiz') }}">Sākums</a></li>
                 <li><a href="{{ route('results') }}">Rezultāti</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="">Testi</a></li>
+                <li><a href="">Atbildes</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
